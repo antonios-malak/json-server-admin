@@ -1,0 +1,168 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Laptop Dell",
+      "price": 15000,
+      "stock": 12,
+      "category": "Electronics",
+      "status": "Available"
+    },
+    {
+      "id": 2,
+      "name": "iPhone 14",
+      "price": 35000,
+      "stock": 5,
+      "category": "Electronics",
+      "status": "Available"
+    },
+    {
+      "name": "iphone16",
+      "price": 66000,
+      "stock": 50,
+      "category": "Electronics",
+      "status": "available",
+      "id": 3
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Electronics",
+      "description": "Devices and gadgets"
+    },
+    {
+      "id": 2,
+      "name": "Clothes",
+      "description": "Apparel and accessories"
+    },
+    {
+      "id": 3,
+      "name": "Furniture",
+      "description": "Home furnishings and decor"
+    }
+  ],
+  "orders": [
+    {
+      "id": 101,
+      "customerId": 1,
+      "products": [
+        {
+          "id": 1,
+          "name": "Laptop Dell",
+          "price": 15000,
+          "stock": 12,
+          "category": "Electronics",
+          "status": "Available"
+        },
+        {
+          "id": 2,
+          "name": "iPhone 14",
+          "price": 35000,
+          "stock": 5,
+          "category": "Electronics",
+          "status": "Available"
+        }
+      ],
+      "total": 32500,
+      "status": "Pending",
+      "date": "2025-09-11"
+    },
+    {
+      "id": 102,
+      "customerId": 2,
+      "products": [
+        {
+          "id": 1,
+          "name": "Laptop Dell",
+          "price": 15000,
+          "stock": 12,
+          "category": "Electronics",
+          "status": "Available"
+        }
+      ],
+      "total": 35000,
+      "status": "Completed",
+      "date": "2025-09-10"
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "Ahmed Ali",
+      "email": "ahmed@example.com",
+      "phone": "01012345678"
+    },
+    {
+      "id": 2,
+      "name": "Sara Mohamed",
+      "email": "sara@example.com",
+      "phone": "01098765432"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "admin",
+      "email": "admin@example.com",
+      "password": "112233",
+      "role": "admin"
+    }
+  ],
+  "languages": [
+    {
+      "id": 1,
+      "code": "en",
+      "name": "English"
+    },
+    {
+      "id": 2,
+      "code": "ar",
+      "name": "Arabic"
+    },
+    {
+      "code": "fr",
+      "name": "French",
+      "id": 3
+    }
+  ],
+  "currencies": [
+    {
+      "id": 1,
+      "code": "USD",
+      "symbol": "$",
+      "name": "US Dollar"
+    },
+    {
+      "id": 2,
+      "code": "EGP",
+      "symbol": "£",
+      "name": "Egyptian Pound"
+    }
+  ],
+  "reports": [
+    {
+      "id": 1,
+      "customerId": 1,
+      "subject": "Late Delivery",
+      "description": "My order was delayed",
+      "status": "Open",
+      "date": "2025-09-10"
+    },
+    {
+      "id": 2,
+      "customerId": 2,
+      "subject": "Damaged Product",
+      "description": "The iPhone I received had a broken screen",
+      "status": "Resolved",
+      "date": "2025-09-09"
+    }
+  ],
+  "stats": {
+    "visitors": 1200,
+    "totalSales": 150000,
+    "totalOrders": 45,
+    "completeOrders": 30,
+    "hangOrders": 5
+  }
+}
