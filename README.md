@@ -6,6 +6,12 @@
 npm install
 npm start
 ```
+## Admin Login Credentials
+
+Use the following credentials to log in as admin:
+
+**Username:** `admin`
+**Password:** `112233`
 
 ## Endpoints
 
