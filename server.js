@@ -204,6 +204,46 @@ app.get('/api/users', (req, res) => {
   }
 });
 
+// Change status for reports
+app.post('/api/reports/:id/status', (req, res) => {
+  const db = readDB();
+  const id = parseInt(req.params.id);
+  const { status } = req.body;
+  
+  if (!status) {
+    return res.status(400).json({ message: 'Status is required' });
+  }
+  
+  const report = (db.reports || []).find(r => r.id === id);
+  if (!report) {
+    return res.status(404).json({ message: 'Report not found' });
+  }
+  
+  report.status = status;
+  writeDB(db);
+  res.json({ success: true, report });
+});
+
+// Change status for orders
+app.post('/api/orders/:id/status', (req, res) => {
+  const db = readDB();
+  const id = parseInt(req.params.id);
+  const { status } = req.body;
+  
+  if (!status) {
+    return res.status(400).json({ message: 'Status is required' });
+  }
+  
+  const order = (db.orders || []).find(o => o.id === id);
+  if (!order) {
+    return res.status(404).json({ message: 'Order not found' });
+  }
+  
+  order.status = status;
+  writeDB(db);
+  res.json({ success: true, order });
+});
+
 // 404 handler for undefined routes
 app.use((req, res) => {
   res.status(404).json({ message: 'Route not found' });
