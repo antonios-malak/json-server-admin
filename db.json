@@ -553,7 +553,7 @@
       "id": 1,
       "name": "admin",
       "email": "admin@example.com",
-      "password": "112233",
+      "password": "112233Admin",
       "role": "admin"
     }
   ],

@@ -31,14 +31,14 @@ app.use((req, res, next) => {
 // Login endpoint - POST with form data in body
 app.post('/auth/login', (req, res) => {
   try {
-    const { username, password } = req.body;
+    const { email, password } = req.body;
     
-    if (!username || !password) {
-      return res.status(400).json({ message: 'Username and password required' });
+    if (!email || !password) {
+      return res.status(400).json({ message: 'email and password required' });
     }
 
     const db = readDB();
-    const user = (db.users || []).find(u => u.name === username && u.password === password);
+    const user = (db.users || []).find(u => u.email === email && u.password === password);
     
     if (!user) {
       return res.status(401).json({ message: 'Invalid credentials' });
@@ -178,12 +178,12 @@ readOnlyCollections.forEach(collection => {
 
 // Handle users collection for login only (GET with query params)
 app.get('/api/users', (req, res) => {
-  const { username, password } = req.query;
+  const { email, password } = req.query;
   
-  if (username && password) {
+  if (email && password) {
     // Login attempt
     const db = readDB();
-    const user = (db.users || []).find(u => u.name === username && u.password === password);
+    const user = (db.users || []).find(u => u.email === email && u.password === password);
     
     if (!user) {
       return res.status(401).json({ message: 'Invalid credentials' });
@@ -200,7 +200,7 @@ app.get('/api/users', (req, res) => {
     });
   } else {
     // Return empty array or error for security
-    res.status(400).json({ message: 'Username and password required' });
+    res.status(400).json({ message: 'email and password required' });
   }
 });
 
